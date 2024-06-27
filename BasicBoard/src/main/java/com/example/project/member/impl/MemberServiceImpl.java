@@ -14,8 +14,13 @@ public class MemberServiceImpl implements MemberService{
 	private MemberDAO memberDao;
 
 	@Override
-	public int loginID(MemberDTO member) {
-		return memberDao.loginID(member);
+	public int loginAction(MemberDTO member) {
+		return memberDao.loginAction(member);
+	}
+	
+	@Override
+	public int idCheck(String id) throws Exception {
+		return memberDao.idCheck(id);
 	}
 
 	@Override
@@ -26,6 +31,11 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void insertMember(MemberDTO member) {
 		memberDao.insertMember(member);
+	}
+
+	@Override
+	public int confirmID(String id) {
+		return memberDao.confirmID(id);
 	}
 	
 	

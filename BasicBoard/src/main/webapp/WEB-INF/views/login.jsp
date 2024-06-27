@@ -67,18 +67,18 @@
 <body>
  <div class="login-container">
         <h2>로그인</h2>
-        <form action="login" method="post">
+        <form method="post" action="login" id="loginForm">
             <div class="input-group">
                 <label for="username">아이디:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="id" name="id" value="${id}" placeholder="아이디" autocomplete="none">
             </div>
             <div class="input-group">
                 <label for="password">비밀번호:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="비밀번호">
             </div>
-            <button type="submit" class="button">로그인</button>
+            <input type="submit" id="loginBtn" value="로그인">
         </form>
-        <a href="register.jsp" class="register-link">회원가입</a>
+        <a href="signUp_form" class="register-link">회원가입</a>
     </div>
 </body>
 </html>
