@@ -26,8 +26,8 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public BoardDTO getBoard(int boardNum) {
-		return boardDao.getBoard(boardNum);
+	public BoardDTO getBoardDetail(int boardNum) {
+		return boardDao.getBoardDetail(boardNum);
 	}
 
 	@Override

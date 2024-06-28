@@ -22,9 +22,15 @@
 			<c:otherwise>
 				<div style="float: right; margin-right: 50px; margin-top: 50px;">
 					${sessionScope.loginMember.name}님 환영합니다. 
-					&nbsp;&nbsp;&nbsp; <a href="logout" style="text-decoration: none">로그아웃</a> | <a href="admin_member_list" style="text-decoration: none">내 게시글 조회</a>
+					&nbsp;&nbsp;&nbsp; <a href="logout" style="text-decoration: none">로그아웃</a> | <a href="getMyBoardList" style="text-decoration: none">내 게시글 조회</a>
 				</div>
 			</c:otherwise>
+		</c:choose>
+		
+		<c:choose>
+			<c:when test="${not empty sessionScope.loginMember}">
+				<a href="boardWriteform" style="text-decoration: none">게시글 등록</a>
+			</c:when>
 		</c:choose>
 	</header>
 </body>

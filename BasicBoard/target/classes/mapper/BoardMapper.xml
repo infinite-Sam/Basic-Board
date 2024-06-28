@@ -26,8 +26,8 @@
 	
 	<!-- 게시글 등록 --> 
 	<insert id="insertBoard">
-		INSERT INTO board(boardNum, title, content, name, indate)
-		VALUES (board_seq.NEXTVAL, #{title}, #{content}, #{name}, TO_char(sysdate, 'yyyy.mm.dd hh24:mi'))
+		INSERT INTO board(boardNum, title, content, id, indate)
+		VALUES (board_seq.NEXTVAL, #{title}, #{content}, #{id}, TO_char(sysdate, 'yyyy.mm.dd hh24:mi'))
 	</insert>
 	
 	<!-- 게시글 삭제 -->

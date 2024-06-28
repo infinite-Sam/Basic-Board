@@ -26,9 +26,9 @@ public class BoardDAO {
 	}
 
 	// 게시글 상세보기
-	public BoardDTO getBoard(int boardNum) {
+	public BoardDTO getBoardDetail(int boardNum) {
 
-		return mybatis.selectOne("BoardDAO.getBoard", boardNum);
+		return mybatis.selectOne("BoardDAO.getBoardDetail", boardNum);
 	}
 
 	// 게시글 등록하기

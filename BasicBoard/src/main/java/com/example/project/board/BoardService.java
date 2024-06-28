@@ -10,7 +10,7 @@ public interface BoardService {
 	
 	List<BoardDTO> getMyBoardList(String id);
 
-	BoardDTO getBoard(int boardNum);
+	BoardDTO getBoardDetail(int boardNum);
 
 	void insertBoard(BoardDTO board);
 	
