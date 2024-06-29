@@ -40,7 +40,7 @@
 	<!-- 게시글 수정 -->
 	<update id="updateBoard">
 		update board set 
-			title=#{title}, content=#{content}, indate=SYSDATE)
+			title=#{title}, content=#{content}, indate=SYSDATE
 			where boardNum=#{boardNum}
 	</update>
 </mapper>

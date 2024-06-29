@@ -77,7 +77,7 @@ public class BoardController {
 	public String updateBoardForm(BoardDTO board, HttpSession session, Model model) {
 		BoardDTO boardNum = boardService.getBoardDetail(board.getBoardNum());
 		model.addAttribute("board", boardNum);
-		return "board/updateBoard";
+		return "board/boardUpdate";
 	}
 	
 	// 게시글 수정 기능
@@ -86,7 +86,7 @@ public class BoardController {
 		MemberDTO loginMember = (MemberDTO)session.getAttribute("loginMember");
 			board.setId(loginMember.getId());
 			boardService.updateBoard(board);
-			return "redirect:boardDetail?boardNum="+board.getBoardNum(); // 작성완료후  공지사항 목록으로 이동
+			return "redirect:getBoardDetail?boardNum="+board.getBoardNum();
 	}
 	
 	// 게시글 삭제 기능
