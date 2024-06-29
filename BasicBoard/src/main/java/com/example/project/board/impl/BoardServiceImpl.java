@@ -9,6 +9,9 @@ import com.example.project.board.BoardService;
 import com.example.project.dao.BoardDAO;
 import com.example.project.dto.BoardDTO;
 
+/* service implementation : service인터페이스의 실제 구현체, 비즈니스로직을 실제로 구현,
+ * 하나 이상의 DAO나 다른 서비스를 사용하여 복잡한 비즈니스 로직 수행,
+ * 트랜잭션 관리가 이루어지는 부분 */
 @Service("boardService")
 public class BoardServiceImpl implements BoardService{
 

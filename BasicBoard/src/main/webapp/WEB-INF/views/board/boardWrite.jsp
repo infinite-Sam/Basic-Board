@@ -72,13 +72,11 @@
     <div class="container">
         <h1>게시글 등록</h1>
         <form id="postForm" action="boardWriteAction" method="post">
-            <label for="title">게시글 제목:</label>
+            <label for="title">게시글 제목</label>
             <input type="text" id="title" name="title" required>
-            <div id="titleError" class="error"></div>
 
-            <label for="content">게시글 내용:</label>
+            <label for="content">게시글 내용</label>
             <textarea id="content" name="content" required></textarea>
-            <div id="contentError" class="error"></div>
 
             <input type="submit" value="등록" onclick="boardWrite()">
             <input type="reset" value="취소" class="cancel" onclick="window.history.back()">

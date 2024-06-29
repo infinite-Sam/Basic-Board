@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.project.dto.BoardDTO;
 
+/* DAO(Data Access Object) : DB에 접근하는 객체, 데이터 접근로직을 비즈니스 로직으로부터 분리 */
 @Repository
 public class BoardDAO {
 

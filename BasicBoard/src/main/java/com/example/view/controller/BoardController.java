@@ -22,7 +22,7 @@ public class BoardController {
 	private BoardService boardService;
 
 	// 게시글 작성 화면이동
-	@GetMapping(value="boardWriteform")
+	@GetMapping(value="boardWriteForm")
 	public String boardWriteform(HttpSession session) {
 		MemberDTO loginMember = (MemberDTO) session.getAttribute("loginMember");
 		if (loginMember == null) {
@@ -34,12 +34,12 @@ public class BoardController {
 	
 	// 게시글 작성기능
 	@PostMapping(value="boardWriteAction")
-	public String boardWriteAction(BoardDTO board, HttpSession session) {
-		MemberDTO loginMember = (MemberDTO) session.getAttribute("loginMember");
-			board.setName(loginMember.getId());
-			boardService.insertBoard(board);
+	public String boardWriteAction(BoardDTO boardDTO, HttpSession session) {
+			MemberDTO loginMember = (MemberDTO) session.getAttribute("loginMember");
+			boardDTO.setId(loginMember.getId());
+			boardService.insertBoard(boardDTO);
 			// 오류가 뜬다면 이부분 확인
-			return "redirect:index";
+			return "redirect:getMyBoardList";
 	}
 	
 	// 전체 게시글 목록 조회
@@ -84,7 +84,7 @@ public class BoardController {
 	@PostMapping(value="updateBoard")
 	public String updateBoardAction(BoardDTO board, HttpSession session) {
 		MemberDTO loginMember = (MemberDTO)session.getAttribute("loginMember");
-			board.setName(loginMember.getId());
+			board.setId(loginMember.getId());
 			boardService.updateBoard(board);
 			return "redirect:boardDetail?boardNum="+board.getBoardNum(); // 작성완료후  공지사항 목록으로 이동
 	}
@@ -93,7 +93,7 @@ public class BoardController {
 	@RequestMapping(value = "deleteBoard")
 	public String deleteBoard(BoardDTO board) {
 		boardService.deleteBoard(board.getBoardNum());
-		return "redirect:board/myBoardList";
+		return "redirect:getMyBoardList";
 	}
 	
 	
