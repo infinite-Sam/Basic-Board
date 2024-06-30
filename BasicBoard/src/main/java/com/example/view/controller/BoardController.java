@@ -44,12 +44,12 @@ public class BoardController {
 	
 	// 전체 게시글 목록 조회
 	@GetMapping(value="getBoardList")
-	public String getBoardList(Model model) {
+	public String getBoardList(HttpSession session, Model model) {
 		System.out.println("전체 게시글 목록 조회");
 		List<BoardDTO> boardList = boardService.getBoardList();
-		model.addAttribute("getBoardList", boardList);
+		model.addAttribute("BoardList", boardList);
 
-		return "index";
+		return "board/boardList";
 	}
 	
 	// 내 게시글 목록 조회
