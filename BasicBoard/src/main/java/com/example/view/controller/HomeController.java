@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.project.board.BoardService;
+import com.example.project.dto.BoardDTO;
 
 /**
  * Handles requests for the application home page.
@@ -17,6 +18,8 @@ public class HomeController {
 	/*
 	 * @Autowired private ProductService productService;
 	 */
+	@Autowired
+	private BoardService boardService;
 	
 	@GetMapping(value = "/index")
 	public String home(Model model) {
@@ -28,6 +31,8 @@ public class HomeController {
 		 * List<ProductVO> bestProdList = productService.getBestProductList();
 		 * model.addAttribute("bestProductList", bestProdList);
 		 */		
+		List<BoardDTO> boardList = boardService.getBoardList();
+		model.addAttribute("getBoardList", boardList);
 		return "index";
 	}
 	

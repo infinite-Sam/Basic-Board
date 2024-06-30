@@ -88,12 +88,12 @@
 			<th>작성자</th>
 			<th>작성일</th>
 		</tr>
-		<c:forEach items="${getMyBoardList}" var="boardDTO">
+		<c:forEach items="${getMyBoardList}" var="board">
 			<tr style="text-align: center;">
-				<td>${boardDTO.boardNum}</td>
-				<td><a href="getBoardDetail?boardNum=${boardDTO.boardNum}"><span style="margin-left: 170px;">${boardDTO.title}</span></a></td>
-				<td>${boardDTO.id}</td>
-				<td>${boardDTO.indate}</td>
+				<td>${board.boardNum}</td>
+				<td><a href="getBoardDetail?boardNum=${board.boardNum}"><span style="margin-left: 170px;">${board.title}</span></a></td>
+				<td>${board.id}</td>
+				<td>${board.indate}</td>
 			</tr>
 		</c:forEach>
 	</table>
